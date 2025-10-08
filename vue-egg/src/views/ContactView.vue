@@ -1,12 +1,12 @@
 <template>
-  <div class="about">
-    <h1>Что</h1>
-  </div>
+<div class="contacts">
+    <h1>Чудесно</h1>
+    </div>
 </template>
 
 <style>
 @media (min-width: 1024px) {
-  .about {
+  .contacts {
     min-height: 100vh;
     display: flex;
     align-items: center;
