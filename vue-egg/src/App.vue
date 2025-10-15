@@ -8,7 +8,7 @@
   <nav>
   <RouterLink to="/home">Главная</RouterLink>
   <RouterLink to="/contacts">Контакты</RouterLink>
-  <RouterLink to="/about">О нас</RouterLink>
+  <RouterLink to="/products">Продукты</RouterLink>
   </nav>
   <RouterView />
 </template>
