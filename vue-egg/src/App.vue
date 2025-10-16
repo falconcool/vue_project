@@ -15,13 +15,14 @@
 
 <style scoped>
 nav {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
+  display: grid;
+  grid-auto-flow: column;
   text-align: center;
-  gap: 10px;
-  padding: 1rem;
+  padding: 10px;
+  margin: 0 auto;
+  align-self: center;
+  background-color: blanchedalmond;
+  width: 300px;
 }
 a {
   text-decoration: none;
