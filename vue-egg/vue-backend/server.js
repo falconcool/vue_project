@@ -9,7 +9,7 @@ app.use(cors());
 app.use(express.json());
 
 // Укажи путь к файлу SQLite БД (проверь, что .db-файл существует)
-const dbPath = 'C:\Users\Скебоб\Desktop\shop.db';
+const dbPath = 'C:\\Users\\Скебоб\\Desktop\\shop.db';
 
 const db = new sqlite3.Database(dbPath, (err) => {
     if (err) {
