@@ -9,7 +9,7 @@
     </div>
 
     <!-- Статусы загрузки -->
-    <div v-if="loading">🔄 Загрузка...</div>
+    <div v-if="loading">Загрузка</div>
 
     <!-- Курьеры -->
     <div v-if="couriers.length">
@@ -43,7 +43,7 @@
     </div>
 
     <!-- Ошибка -->
-    <div v-if="error" style="color: red;">⚠️ {{ error }}</div>
+    <div v-if="error" style="color: red;">Ошибк {{ error }}</div>
   </div>
 </template>
 
