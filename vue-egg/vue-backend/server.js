@@ -91,6 +91,48 @@ app.get('/api/company', (req, res) => {
     });
 });
 
+app.post('/api/products', (req, res) => {
+    const { name, price, item_count, company_id } = req.body;
+    const query = `
+        INSERT INTO products (name, price, item_count, company_id)
+        VALUES (?, ?, ?, ?)
+    `;
+    db.run(query, [name, price, item_count, company_id], function (err) {
+        if (err) {
+            return res.status(500).json({ error: err.message });
+        }
+        res.status(201).json({ id: this.lastID, name, price, item_count, company_id });
+    });
+});
+
+app.put('/api/products/:id', (req, res) => {
+    const { id } = req.params;
+    const { name, price, item_count, company_id } = req.body;
+    const query = `
+        UPDATE products
+        SET name = ?, price = ?, item_count = ?, company_id = ?
+        WHERE id = ?
+    `;
+    db.run(query, [name, price, item_count, company_id, id], function (err) {
+        if (err) {
+            return res.status(500).json({ error: err.message });
+        }
+        res.json({ updated: this.changes });
+    });
+});
+
+app.delete('/api/products/:id', (req, res) => {
+    const { id } = req.params;
+    const query = 'DELETE FROM products WHERE id = ?';
+    db.run(query, [id], function (err) {
+        if (err) {
+            return res.status(500).json({ error: err.message });
+        }
+        res.json({ deleted: this.changes });
+    });
+});
+
+
 const PORT = 3001;
 app.listen(PORT, () => {
     console.log(`🚀 Сервер запущен на http://localhost:${PORT}`);
