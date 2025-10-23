@@ -13,9 +13,9 @@ const dbPath = 'C:\\Users\\Скебоб\\Desktop\\shop.db';
 
 const db = new sqlite3.Database(dbPath, (err) => {
     if (err) {
-        console.error('❌ Ошибка подключения к БД:', err.message);
+        console.error('Ошибка подключения к БД:', err.message);
     } else {
-        console.log('✅ Подключение к SQLite успешно');
+        console.log('Подключение к SQLite успешно');
     }
 });
 
@@ -135,5 +135,5 @@ app.delete('/api/products/:id', (req, res) => {
 
 const PORT = 3001;
 app.listen(PORT, () => {
-    console.log(`🚀 Сервер запущен на http://localhost:${PORT}`);
+    console.log(`Сервер запущен на http://localhost:${PORT}`);
 });
